@@ -26,7 +26,8 @@ export function buildUpiLink({ upiId, payeeName, amountPaise, note }: UpiLinkInp
     ["cu", "INR"],
     ["tn", note.trim().slice(0, 50)],
   ];
-  const query = params.map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join("&");
+  // Keep "@" readable in the UPI ID: some UPI apps don't decode "%40".
+  const query = params.map(([k, v]) => `${k}=${encodeURIComponent(v).replace(/%40/g, "@")}`).join("&");
   return `upi://pay?${query}`;
 }
 

@@ -70,7 +70,7 @@ describe("UPI links", () => {
   });
   it("builds a correctly encoded upi:// link", () => {
     const link = buildUpiLink({ upiId: "arjun@okicici", payeeName: "Arjun K", amountPaise: 182476, note: "Splitly - Plan B" });
-    expect(link).toBe("upi://pay?pa=arjun%40okicici&pn=Arjun%20K&am=1824.76&cu=INR&tn=Splitly%20-%20Plan%20B");
+    expect(link).toBe("upi://pay?pa=arjun@okicici&pn=Arjun%20K&am=1824.76&cu=INR&tn=Splitly%20-%20Plan%20B");
   });
   it("builds a WhatsApp link containing the amount and UPI link", () => {
     const wa = buildWhatsAppLink({ personName: "Riya", amountPaise: 18700, upiLink: "upi://pay?pa=a%40b", payerName: "Arjun", place: "Theo Cafe" });
