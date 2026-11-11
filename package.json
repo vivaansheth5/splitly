@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",
+    "heic2any": "^0.0.4",
     "next": "16.4.6",
     "qrcode": "^1.5.4",
     "react": "19.3.0",
