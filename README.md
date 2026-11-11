@@ -2,7 +2,7 @@
 
 **Snap a restaurant bill, tap who had what, and send everyone a UPI link for their exact share.**
 
-🔗 **Live app:** LIVE_URL_PLACEHOLDER
+🔗 **Live app:** https://splitly-upi.vercel.app
 
 ## The problem
 
