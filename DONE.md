@@ -20,6 +20,7 @@
 | API key not in browser JavaScript | ✅ 0 occurrences in all client bundles |
 | Live rate limit | ✅ requests beyond 10/minute from one IP get HTTP 429 |
 | Error states (fake image, missing file, non-bill photo) | ✅ friendly `not_image`, `bad_request`, `not_a_bill` messages |
+| GitHub → Vercel auto-deploy | ✅ connected; a push triggered a production deploy by itself |
 | Nothing private committed | ✅ `.env.local` and `samples/` are git-ignored; every commit was checked for sample images and `sk-ant-` keys |
 
 Sample results on the live API (parsed grand total vs the printed one):
@@ -32,14 +33,8 @@ Sample results on the live API (parsed grand total vs the printed one):
 
 ## What didn't work / what to know
 
-1. **Auto-deploy from GitHub isn't connected yet.** Running `vercel git connect` was blocked by
-   Claude Code's permission system (it counts as an account-level change), so I didn't do it. Run
-   this yourself once from the project folder:
-   ```bash
-   vercel git connect https://github.com/vivaansheth5/splitly
-   ```
-   (or Vercel dashboard → project **bill-splitter** → Settings → Git → Connect). After that, every
-   `git push` deploys automatically. Until then, deploy with `vercel --prod`.
+1. **Auto-deploy from GitHub is on.** The repo `vivaansheth5/splitly` is connected to the Vercel
+   project, so every `git push` to `main` deploys automatically (verified with a test push).
 2. **`splitly.vercel.app` was already taken** by someone else, so the app lives at
    `splitly-upi.vercel.app`. The Vercel project itself is called `bill-splitter` (from the folder
    name). You can rename it in the Vercel dashboard if you like.
